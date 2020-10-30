@@ -74,10 +74,10 @@ class UploadingPhotoViewController: UIViewController, UIImagePickerControllerDel
         let selectedImage = info[.editedImage] as! UIImage
         
         // if the our image needs to be scaled
-//        let size = CGSize(width: 300, height: 300)
-//        let scaledImage = image.af_imageScalled(to: size)
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = selectedImage.af_imageAspectScaled(toFill: size)
         
-        userPhoto.image = selectedImage
+        userPhoto.image = scaledImage
         
         dismiss(animated: true, completion: nil)
     }
